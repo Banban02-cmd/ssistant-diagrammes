@@ -118,7 +118,7 @@ with st.sidebar:
     )
     if st.button("🔄 Réinitialiser le parcours"):
         st.session_state.engine = SessionState()
-        st.experimental_rerun()
+        st.rerun()
 
 st.markdown(f"### Étape {engine.step} / 5")
 
@@ -156,7 +156,7 @@ if engine.step == 1:
             st.error("Merci de renseigner la question et la variable.")
         else:
             engine.step = 2
-            st.experimental_rerun()
+            st.rerun()
     c3.write("")
 
 # --------------- Étape 2 ---------------
@@ -211,7 +211,7 @@ elif engine.step == 2:
             st.error("Il faut au moins 2 catégories et un effectif par catégorie.")
         else:
             engine.step = 3
-            st.experimental_rerun()
+            st.rerun()
 
 # --------------- Étape 3 ---------------
 elif engine.step == 3:
@@ -238,7 +238,7 @@ elif engine.step == 3:
             st.error("Écris une justification et vérifie que le sommet dépasse l'effectif max.")
         else:
             engine.step = 4
-            st.experimental_rerun()
+            st.rerun()
 
 # --------------- Étape 4 ---------------
 elif engine.step == 4:
@@ -270,7 +270,7 @@ elif engine.step == 4:
             st.error("Coche au moins un élément prêt.")
         else:
             engine.step = 5
-            st.experimental_rerun()
+            st.rerun()
 
 # --------------- Étape 5 ---------------
 elif engine.step == 5:
@@ -322,7 +322,7 @@ elif engine.step == 5:
 
     if st.button("↩️ Revenir à l'étape 1"):
         st.session_state.engine = SessionState()
-        st.experimental_rerun()
+        st.rerun()
 
 # ------------ Pied de page ------------
 st.divider()
